@@ -78,6 +78,7 @@ const ExploreGadgets = () => {
               img={data.product_image}
               title={data.product_title}
               price={data.price}
+              product_id={data.product_id}
             />
           ))}
         </div>
