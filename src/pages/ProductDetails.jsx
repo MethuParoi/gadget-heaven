@@ -4,11 +4,16 @@ import { IoCartOutline } from "react-icons/io5";
 import ReactStars from "react-rating-stars-component";
 import { usePIdContext } from "../context-api/Context";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const [gadget, setGadget] = useState(null);
   const [rating, setRating] = useState(0);
   const { productId } = usePIdContext();
+  const { setCartItems } = usePIdContext();
+  const { setTotalItems } = usePIdContext();
+  const { setWishlistItems } = usePIdContext();
+  const { setTotalWishlistItems } = usePIdContext();
 
   useEffect(() => {
     if (productId) {
@@ -33,7 +38,7 @@ const ProductDetails = () => {
   return (
     <div>
       <div className="bg-purple-600 h-[20rem] rounded-xl flex flex-col items-center">
-        <h1 className="text-4xl font-semibold text-gray-50 text-center tracking-wide py-2">
+        <h1 className="text-4xl font-semibold text-gray-50 text-center tracking-wide pt-5 pb-2">
           Product Details
         </h1>
 
@@ -90,14 +95,28 @@ const ProductDetails = () => {
           </div>
 
           <div className="flex items-center gap-x-5">
-            <button className="flex items-center gap-x-2 bg-purple-600 hover:bg-purple-800 py-2 px-5 rounded-[2rem]">
+            <button
+              onClick={() => {
+                setCartItems((prev) => [...prev, gadget]);
+                setTotalItems((prev) => prev + 1);
+                toast.success("Item Added to Cart");
+              }}
+              className="flex items-center gap-x-2 bg-purple-600 hover:bg-purple-800 py-2 px-5 rounded-[2rem]"
+            >
               <span className="text-lg text-gray-50 font-semibold">
                 Add To Cart
               </span>
               <IoCartOutline className="text-[1.8rem] text-gray-50" />
             </button>
 
-            <button className="w-12 h-12 border-2 border-gray-400 rounded-full flex justify-center items-center hover:bg-gray-400">
+            <button
+              onClick={() => {
+                setWishlistItems((prev) => [...prev, gadget]);
+                setTotalWishlistItems((prev) => prev + 1);
+                toast.success("Item Added to Wishlist");
+              }}
+              className="w-12 h-12 border-2 border-gray-400 rounded-full flex justify-center items-center hover:bg-gray-400"
+            >
               <FaRegHeart className="text-[1.6rem] text-gray-500" />
             </button>
           </div>
