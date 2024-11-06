@@ -31,7 +31,7 @@ const Dashboard = () => {
           total={cartItems.map((item) => item.price).reduce((a, b) => a + b, 0)}
         />
       )}
-      <div className="bg-purple-600 h-[20rem] rounded-xl flex flex-col items-center">
+      <div className="bg-purple-600 h-[20rem] rounded-xl flex flex-col items-center justify-center">
         <h1 className="text-4xl font-semibold text-gray-50 text-center tracking-wide pt-5 pb-2">
           Dashboard
         </h1>

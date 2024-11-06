@@ -24,7 +24,7 @@ const StatisticsPage = () => {
   const { product } = usePIdContext();
   return (
     <div className="">
-      <div className="py-16 my-4 rounded-xl text-white text-center border-2 bg-blue-600">
+      <div className="py-16 my-4 rounded-xl text-white text-center border-2 bg-purple-600">
         <h1 className="text-2xl  md:text-3xl lg:text-4xl font-bold">
           Statistics
         </h1>

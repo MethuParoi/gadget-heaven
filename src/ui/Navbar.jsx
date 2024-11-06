@@ -13,13 +13,13 @@ const Navbar = () => {
   return (
     <div
       className={`${
-        location.pathname === "/home"
+        location.pathname === "/"
           ? "bg-purple-600 text-gray-100 "
           : "bg-gray-50 text-gray-700"
       } flex items-center justify-around  py-4 rounded-t-xl`}
     >
       <h1
-        onClick={() => navigate("/home")}
+        onClick={() => navigate("/")}
         className="text-2xl font-semibold cursor-pointer"
       >
         Gadget Heaven
@@ -28,17 +28,17 @@ const Navbar = () => {
       <div className="flex space-x-4 font-medium ">
         <button
           className={`${
-            location.pathname === "/home"
+            location.pathname === "/"
               ? "hover:text-gray-200 text-gray-50 underline font-bold"
               : "hover:text-gray-900"
           }`}
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/")}
         >
           Home
         </button>
         <button
           className={`${
-            location.pathname === "/home"
+            location.pathname === "/"
               ? "hover:text-gray-200"
               : "hover:text-purple-800"
           } ${
@@ -54,7 +54,7 @@ const Navbar = () => {
         </button>
         <button
           className={`${
-            location.pathname === "/home"
+            location.pathname === "/"
               ? "hover:text-gray-200"
               : "hover:text-purple-800"
           }  ${
@@ -68,7 +68,7 @@ const Navbar = () => {
         </button>
         <button
           className={`${
-            location.pathname === "/home"
+            location.pathname === "/"
               ? "hover:text-gray-200"
               : "hover:text-purple-800"
           }  ${

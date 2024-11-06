@@ -28,7 +28,7 @@ export const Modal = ({ total }) => {
               setShowModal(false);
               setCartItems([]);
               setTotalItems(0);
-              navigate("/home");
+              navigate("/");
             }}
             className="w-[90%] h-12 bg-gray-300 hover:bg-gray-400 rounded-[2rem] flex justify-center items-center text-xl font-semibold text-gray-800 mt-5 "
           >
