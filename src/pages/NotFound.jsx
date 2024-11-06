@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const NotFound = () => {
+  const location = useLocation();
+  useEffect(() => {
+    const pageTitle = "Gadget Heaven | Not Found";
+    document.title = pageTitle;
+  }, [location]);
   return (
     <div className="bg-gray-50 h-[20rem] flex flex-col items-center justify-center">
       {" "}

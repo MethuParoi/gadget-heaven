@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 const AboutUs = () => {
+  const location = useLocation();
+  useEffect(() => {
+    const pageTitle = "Gadget Heaven | About Us";
+    document.title = pageTitle;
+  }, [location]);
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center">
       <div className="bg-purple-600 h-[20rem] w-full rounded-xl flex flex-col items-center justify-center pb-20">

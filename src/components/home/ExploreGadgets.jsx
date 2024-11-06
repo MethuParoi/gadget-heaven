@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import GadgetCard from "./GadgetCard";
+import { usePIdContext } from "../../context-api/Context";
 
 const sortOptions = [
   {
@@ -35,12 +36,14 @@ const sortOptions = [
 const ExploreGadgets = () => {
   const [gadgets, setGadgets] = useState([]);
   const [sort, setSort] = useState("all");
+  const { setProduct } = usePIdContext();
 
   useEffect(() => {
     fetch("Data.json")
       .then((res) => res.json())
       .then((data) => {
         setGadgets(data);
+        setProduct(data);
       });
   }, []);
 

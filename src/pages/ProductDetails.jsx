@@ -5,6 +5,7 @@ import ReactStars from "react-rating-stars-component";
 import { usePIdContext } from "../context-api/Context";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
 
 const ProductDetails = () => {
   const [gadget, setGadget] = useState(null);
@@ -14,6 +15,12 @@ const ProductDetails = () => {
   const { setTotalItems } = usePIdContext();
   const { setWishlistItems } = usePIdContext();
   const { setTotalWishlistItems } = usePIdContext();
+
+  const location = useLocation();
+  useEffect(() => {
+    const pageTitle = "Gadget Heaven | Product Details";
+    document.title = pageTitle;
+  }, [location]);
 
   useEffect(() => {
     if (productId) {

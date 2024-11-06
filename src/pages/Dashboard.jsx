@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DashboardCard from "../components/dashboard/DashboardCard";
 import { usePIdContext } from "../context-api/Context";
 import { FaSortAmountDown } from "react-icons/fa";
 import { Modal } from "../ui/Modal";
+import { useLocation } from "react-router-dom";
 
 const Dashboard = () => {
   const [toggleButton, setToggleButton] = useState("cart");
@@ -11,6 +12,12 @@ const Dashboard = () => {
   const { setCartItems } = usePIdContext();
   const { showModal } = usePIdContext();
   const { setShowModal } = usePIdContext();
+
+  const location = useLocation();
+  useEffect(() => {
+    const pageTitle = "Gadget Heaven | Dashboard";
+    document.title = pageTitle;
+  }, [location]);
 
   const handleSortByPrice = () => {
     const sortedCartItems = [...cartItems].sort((a, b) => b.price - a.price);

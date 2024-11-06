@@ -18,7 +18,12 @@ const Navbar = () => {
           : "bg-gray-50 text-gray-700"
       } flex items-center justify-around  py-4 rounded-t-xl`}
     >
-      <h1 className="text-2xl font-semibold ">Gadget Heaven</h1>
+      <h1
+        onClick={() => navigate("/home")}
+        className="text-2xl font-semibold cursor-pointer"
+      >
+        Gadget Heaven
+      </h1>
 
       <div className="flex space-x-4 font-medium ">
         <button

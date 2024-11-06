@@ -4,8 +4,7 @@ import './App.css'
 import AppLayout from './ui/AppLayout';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-import Statistics from './pages/Statistics';
-import Cart from './pages/Cart';
+import Statistics from "./pages/Statistics";
 import ProductDetails from "./pages/ProductDetails";
 import { PidProvider } from "./context-api/Context";
 import { ToastContainer } from "react-toastify";
@@ -24,7 +23,6 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/statistics" element={<Statistics />} />
             <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/cart" element={<Cart />} />
             <Route path="/details" element={<ProductDetails />} />
             <Route path="*" element={<NotFound />} />
           </Route>

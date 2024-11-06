@@ -4,6 +4,7 @@ const pIdContext = createContext(null);
 
 export function PidProvider({ children }) {
   const [productId, setProductId] = useState(null);
+  const [product, setProduct] = useState({});
   const [cartItems, setCartItems] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [wishlistItems, setWishlistItems] = useState([]);
@@ -25,6 +26,8 @@ export function PidProvider({ children }) {
         setTotalWishlistItems,
         showModal,
         setShowModal,
+        product,
+        setProduct,
       }}
     >
       {children}
