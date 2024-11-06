@@ -92,6 +92,7 @@ const Dashboard = () => {
             </button>
             <button
               onClick={() => setShowModal(true)}
+              disabled={cartItems.length === 0}
               className="bg-purple-600  hover:bg-purple-800 text-gray-50 hover:text-gray-200 font-semibold  px-4 py-1 border-2 border-purple-600 rounded-[2rem] text-lg"
             >
               Purchase
